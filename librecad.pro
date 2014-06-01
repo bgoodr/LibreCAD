@@ -10,31 +10,32 @@ SUBDIRS     = \
 
 exists( custom.pro ):include( custom.pro )
 
-# I cannot use custom.pro file because it is in the .gitignore file,
-# and I want to be able to check this into my local repository in GitHub:
+# --------------------------------------------------------------------------------
+# Install directories and files:
+# --------------------------------------------------------------------------------
 
-# Force the fonts to get installed to where librecad will see them when running under qtcreator: 
-myfonts.files += $$files(librecad/support/fonts/*.lff)
-myfonts.path = $$OUT_PWD/unix/resources/fonts
-INSTALLS += myfonts
+# Install fonts:
+install_fonts.files += $$files(librecad/support/fonts/*.lff)
+install_fonts.path = $$OUT_PWD/unix/resources/fonts
+INSTALLS += install_fonts
 
-# Force the hatch patterns to get installed to where librecad will see them when running under qtcreator: 
-mypatterns.files += $$files(librecad/support/patterns/*.dxf)
-mypatterns.path = $$OUT_PWD/unix/resources/patterns
-INSTALLS += mypatterns
+# Install hatch patterns:
+install_patterns.files += $$files(librecad/support/patterns/*.dxf)
+install_patterns.path = $$OUT_PWD/unix/resources/patterns
+INSTALLS += install_patterns
 
-# Force the library files to get installed to where librecad will see them when running under qtcreator: 
-mylibraryfiles.files += $$files(unix/resources/library)
-mylibraryfiles.path = $$OUT_PWD/unix/resources
-INSTALLS += mylibraryfiles
+# Install library files:
+install_libraryfiles.files += $$files(unix/resources/library)
+install_libraryfiles.path = $$OUT_PWD/unix/resources
+INSTALLS += install_libraryfiles
 
-# Force the doc files files to get installed to where librecad will see them when running under qtcreator: 
-mydocfiles.files += $$files(unix/resources/doc)
-mydocfiles.path = $$OUT_PWD/unix/resources
-INSTALLS += mydocfiles
+# Install doc files:
+install_docfiles.files += $$files(unix/resources/doc)
+install_docfiles.path = $$OUT_PWD/unix/resources
+INSTALLS += install_docfiles
 
-# Force the qm tranlation files to get installed to where librecad will see them when running under qtcreator: 
-myqmfiles.files += $$files(unix/resources/qm)
-myqmfiles.path = $$OUT_PWD/unix/resources
-INSTALLS += myqmfiles
+# Install tranlation files:
+install_qmfiles.files += $$files(unix/resources/qm)
+install_qmfiles.path = $$OUT_PWD/unix/resources
+INSTALLS += install_qmfiles
 
