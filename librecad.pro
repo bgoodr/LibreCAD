@@ -15,13 +15,13 @@ exists( custom.pro ):include( custom.pro )
 # --------------------------------------------------------------------------------
 
 # Install fonts:
-install_fonts.files += $$files(librecad/support/fonts/*.lff)
-install_fonts.path = $$OUT_PWD/unix/resources/fonts
+install_fonts.files += $$files(librecad/support/fonts)
+install_fonts.path = $$OUT_PWD/unix/resources
 INSTALLS += install_fonts
 
 # Install hatch patterns:
-install_patterns.files += $$files(librecad/support/patterns/*.dxf)
-install_patterns.path = $$OUT_PWD/unix/resources/patterns
+install_patterns.files += $$files(librecad/support/patterns)
+install_patterns.path = $$OUT_PWD/unix/resources
 INSTALLS += install_patterns
 
 # Install library files:
